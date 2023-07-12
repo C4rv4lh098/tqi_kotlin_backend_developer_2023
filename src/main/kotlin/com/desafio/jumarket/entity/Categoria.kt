@@ -6,7 +6,7 @@ import jakarta.persistence.*
 data class Categoria(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        val id: Long,
+        val id: Long? = null,
 
         @Column(nullable = false)
         val nome: String = "",

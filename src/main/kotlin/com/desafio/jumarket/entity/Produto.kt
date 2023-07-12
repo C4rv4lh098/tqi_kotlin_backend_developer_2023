@@ -7,13 +7,13 @@ import jakarta.persistence.*
 data class Produto(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        val id: Long,
+        val id: Long? = null,
 
         @Column(nullable = false)
         val nome: String = "",
 
         @Column(nullable = false)
-        val unidade_Medida: String = "",
+        val unidadeMedida: String = "",
 
         @Column(nullable = false)
         var preco: Double,
