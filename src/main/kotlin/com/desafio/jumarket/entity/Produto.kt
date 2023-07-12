@@ -19,5 +19,5 @@ data class Produto(
         var preco: Double,
 
         @ManyToOne
-        val categoria: Categoria
+        var categoria: Categoria
 )
