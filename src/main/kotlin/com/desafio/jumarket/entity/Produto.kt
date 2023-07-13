@@ -13,7 +13,7 @@ data class Produto(
         val nome: String = "",
 
         @Column(nullable = false)
-        val unidadeMedida: String = "",
+        var unidadeMedida: String = "",
 
         @Column(nullable = false)
         var preco: Double,

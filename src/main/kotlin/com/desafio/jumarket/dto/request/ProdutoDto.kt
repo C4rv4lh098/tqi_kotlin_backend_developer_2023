@@ -24,5 +24,4 @@ class ProdutoDto(
             preco =  this.preco,
             categoria = Categoria(id = this.categoriaId)
     )
-
 }
