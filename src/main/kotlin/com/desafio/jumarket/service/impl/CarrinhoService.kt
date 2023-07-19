@@ -4,7 +4,9 @@ import com.desafio.jumarket.entity.Carrinho
 import com.desafio.jumarket.exception.BusinessException
 import com.desafio.jumarket.repository.CarrinhoRepository
 import com.desafio.jumarket.service.ICarrinhoService
+import org.springframework.stereotype.Service
 
+@Service
 class CarrinhoService(
         private val carrinhoRepository: CarrinhoRepository
 ): ICarrinhoService {

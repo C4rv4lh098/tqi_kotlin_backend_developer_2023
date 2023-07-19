@@ -4,7 +4,9 @@ import com.desafio.jumarket.entity.Produto
 import com.desafio.jumarket.exception.BusinessException
 import com.desafio.jumarket.repository.ProdutoRepository
 import com.desafio.jumarket.service.IProdutoService
+import org.springframework.stereotype.Service
 
+@Service
 class ProdutoService(
         private val produtoRepository: ProdutoRepository,
         private val categoriaService: CategoriaService

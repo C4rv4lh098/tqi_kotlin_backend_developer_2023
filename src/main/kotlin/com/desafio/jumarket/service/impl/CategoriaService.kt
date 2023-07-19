@@ -4,7 +4,9 @@ import com.desafio.jumarket.entity.Categoria
 import com.desafio.jumarket.exception.BusinessException
 import com.desafio.jumarket.repository.CategoriaRepository
 import com.desafio.jumarket.service.ICategoriaSevice
+import org.springframework.stereotype.Service
 
+@Service
 class CategoriaService(
         private val categoriaRepository: CategoriaRepository
 ): ICategoriaSevice {
