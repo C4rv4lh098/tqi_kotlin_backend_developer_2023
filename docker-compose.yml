@@ -1,0 +1,14 @@
+version: '3'
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    container_name: juMarket
+    ports:
+      - '3308:3306'
+    environment:
+      - MYSQL_DATABASE=dbjumarket
+      - MYSQL_ROOT_PASSWORD=admin123
+      - MYSQL_USER=user
+    volumes:
+      - ./docker/volume_mysql:/var/lib/mysql
