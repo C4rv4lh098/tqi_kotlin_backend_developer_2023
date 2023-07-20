@@ -1,5 +1,6 @@
 package com.desafio.jumarket.entity
 
+import com.fasterxml.jackson.annotation.JsonBackReference
 import jakarta.persistence.*
 
 @Entity
@@ -18,6 +19,7 @@ data class Produto(
         @Column(nullable = false)
         var preco: Double,
 
-        @ManyToOne
+        @ManyToOne(fetch = FetchType.LAZY)
+        @JsonBackReference
         var categoria: Categoria
 )
