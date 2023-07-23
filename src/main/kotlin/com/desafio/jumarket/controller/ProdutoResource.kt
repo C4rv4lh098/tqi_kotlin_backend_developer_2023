@@ -39,7 +39,7 @@ class ProdutoResource(
     }
 
     @GetMapping
-    fun findAllByCategoriaId(@PathVariable(value = "categoriaID") categoriaId: Long): ResponseEntity<List<ProdutoViewList>>{
+    fun findAllByCategoriaId(@RequestParam(value = "categoriaID") categoriaId: Long): ResponseEntity<List<ProdutoViewList>>{
         val produtoViewList: List<ProdutoViewList> = this.produtoService.findAllByCategoria(categoriaId).stream()
                 .map{produto: Produto -> ProdutoViewList(produto)}
                 .collect(Collectors.toList())

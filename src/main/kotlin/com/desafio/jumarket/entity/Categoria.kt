@@ -1,6 +1,5 @@
 package com.desafio.jumarket.entity
 
-import com.fasterxml.jackson.annotation.JsonIgnore
 import jakarta.persistence.*
 @Entity
 @Table(name = "Categoria")
@@ -14,6 +13,5 @@ data class Categoria(
 
         @OneToMany(fetch = FetchType.LAZY, cascade = [CascadeType.REMOVE],
                 mappedBy = "categoria")
-        @JsonIgnore
         var produto: List<Produto> = mutableListOf()
 )
