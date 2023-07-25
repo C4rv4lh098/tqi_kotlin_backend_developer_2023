@@ -2,8 +2,9 @@ package com.desafio.jumarket.repository
 
 import com.desafio.jumarket.entity.Carrinho
 import org.springframework.data.jpa.repository.JpaRepository
-import org.springframework.stereotype.Repository
+import org.springframework.data.jpa.repository.Query
 
-@Repository
-interface CarrinhoRepository: JpaRepository<Carrinho, Long>{
+interface CarrinhoRepository: JpaRepository<Carrinho, Long> {
+    @Query(value = "SELECT * FROM CARRINHO WHERE CLIENTE_ID = ?1", nativeQuery = true)
+    fun findAllByClientId(ClienteId: Long): List<Carrinho>
 }

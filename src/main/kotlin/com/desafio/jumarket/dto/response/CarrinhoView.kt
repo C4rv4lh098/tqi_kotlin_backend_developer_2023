@@ -1,11 +1,15 @@
 package com.desafio.jumarket.dto.response
 
 import com.desafio.jumarket.entity.Carrinho
+import com.desafio.jumarket.enummeration.Pagamento
+import jakarta.validation.constraints.NotNull
 
-class CarrinhoViewList (
+class CarrinhoView(
+        val clienteId: Long,
         val produtoId: Long
 ) {
     constructor(carrinho: Carrinho): this(
+            clienteId = carrinho.clienteId,
             produtoId = carrinho.produtoId
     )
 }

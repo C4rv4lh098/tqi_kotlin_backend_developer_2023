@@ -7,19 +7,22 @@ import com.desafio.jumarket.service.ICarrinhoService
 import org.springframework.stereotype.Service
 
 @Service
-class CarrinhoService(
+data class CarrinhoService(
         private val carrinhoRepository: CarrinhoRepository
 ): ICarrinhoService {
     override fun save(carrinho: Carrinho): Carrinho =
             this.carrinhoRepository.save(carrinho)
 
-    override fun findById(id: Long): Carrinho =
+    override fun finById(id: Long): Carrinho =
             this.carrinhoRepository.findById(id).orElseThrow {
-                throw BusinessException("Id %id not found")
+                throw BusinessException("carrinhoId %id not found")
             }
 
+    override fun findAllByCliente(clienteId: Long): List<Carrinho> =
+            this.carrinhoRepository.findAllByClientId(clienteId)
+
     override fun delete(id: Long) {
-        val carrinho: Carrinho = this.findById(id)
+        val carrinho: Carrinho = this.finById(id)
         this.carrinhoRepository.delete(carrinho)
     }
 }

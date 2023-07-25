@@ -1,6 +1,7 @@
 package com.desafio.jumarket.controller
 
 import com.desafio.jumarket.dto.request.CarrinhoDto
+import com.desafio.jumarket.dto.response.CarrinhoView
 import com.desafio.jumarket.dto.response.CarrinhoViewList
 import com.desafio.jumarket.entity.Carrinho
 import com.desafio.jumarket.service.impl.CarrinhoService
@@ -13,8 +14,10 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
+import java.util.stream.Collectors
 
 @RestController
 @RequestMapping("/api/carrinho")
@@ -24,13 +27,21 @@ class CarrinhoResource(
     @PostMapping
     fun saveCarrinho(@RequestBody @Valid carrinhoDto: CarrinhoDto): ResponseEntity<String>{
         val savedCarrinho = this.carrinhoService.save(carrinhoDto.toEntity())
-        return ResponseEntity.status(HttpStatus.CREATED).body("Compra ${savedCarrinho.id} saved")
+        return ResponseEntity.status(HttpStatus.CREATED).body("Carrinho ${savedCarrinho.id} saved!")
     }
 
     @GetMapping("/{id}")
-    fun findById(@PathVariable id: Long): ResponseEntity<CarrinhoViewList>{
-        val carrinho: Carrinho = this.carrinhoService.findById(id)
-        return ResponseEntity.status(HttpStatus.OK).body(CarrinhoViewList(carrinho))
+    fun findById(@PathVariable id: Long): ResponseEntity<CarrinhoView>{
+        val carrinho: Carrinho = this.carrinhoService.finById(id)
+        return ResponseEntity.status(HttpStatus.OK).body(CarrinhoView(carrinho))
+    }
+
+    @GetMapping
+    fun findAllByClienteId(@RequestParam(value = "clienteId") clienteId: Long): ResponseEntity<List<CarrinhoViewList>>{
+        val carrinhoViewList: List<CarrinhoViewList> = this.carrinhoService.findAllByCliente(clienteId).stream()
+                .map{carrinho: Carrinho -> CarrinhoViewList(carrinho)}
+                .collect(Collectors.toList())
+        return ResponseEntity.status(HttpStatus.OK).body(carrinhoViewList)
     }
 
     @DeleteMapping("/{id}")

@@ -5,7 +5,6 @@ CREATE TABLE categoria (
    CONSTRAINT pk_categoria PRIMARY KEY (id)
 );
 
-
 --#MySQL
 --CREATE TABLE categoria (
 --  id BIGINT AUTO_INCREMENT NOT NULL,
