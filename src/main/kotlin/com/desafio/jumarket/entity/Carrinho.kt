@@ -14,9 +14,6 @@ data class Carrinho(
         var clienteId: Long,
 
         @Column(nullable = false)
-        var produtoId: List<Long> = mutableListOf(),
-
-        @Column(nullable = false)
-        var pagamento: Pagamento
+        var produtoId: Long
 
 )

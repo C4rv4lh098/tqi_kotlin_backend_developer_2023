@@ -1,5 +1,6 @@
 package com.desafio.jumarket.entity
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import jakarta.persistence.*
 
 @Entity
@@ -19,5 +20,6 @@ data class Produto(
         var preco: Double,
 
         @ManyToOne
+        @JsonIgnore
         var categoria: Categoria
 )

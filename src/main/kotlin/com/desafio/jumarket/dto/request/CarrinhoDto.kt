@@ -9,14 +9,10 @@ class CarrinhoDto(
         val clienteId: Long,
 
         @field:NotNull(message = "Invalid Input")
-        val produtoId: List<Long>,
-
-        @field:NotNull(message = "Invalid Input")
-        val pagamento: Pagamento
+        val produtoId: Long
 ) {
     fun toEntity(): Carrinho = Carrinho(
             clienteId = this.clienteId,
-            produtoId = this.produtoId,
-            pagamento = this.pagamento
+            produtoId = this.produtoId
     )
 }

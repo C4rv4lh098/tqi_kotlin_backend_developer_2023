@@ -7,5 +7,7 @@ interface ICarrinhoService {
 
     fun finById(id: Long): Carrinho
 
+    fun findAllByCliente(clienteId: Long): List<Carrinho>
+
     fun delete(id: Long)
 }
