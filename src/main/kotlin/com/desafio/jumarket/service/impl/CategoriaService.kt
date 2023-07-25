@@ -15,7 +15,7 @@ class CategoriaService(
 
     override fun findById(id: Long): Categoria =
             this.categoriaRepository.findById(id).orElseThrow{
-                throw BusinessException("Id %id not found")
+                throw BusinessException("Id $id not found")
             }
 
     override fun delete(id: Long) {

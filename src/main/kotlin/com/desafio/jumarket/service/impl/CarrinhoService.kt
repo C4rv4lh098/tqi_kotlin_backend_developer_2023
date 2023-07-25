@@ -15,7 +15,7 @@ data class CarrinhoService(
 
     override fun finById(id: Long): Carrinho =
             this.carrinhoRepository.findById(id).orElseThrow {
-                throw BusinessException("carrinhoId %id not found")
+                throw BusinessException("carrinhoId $id not found")
             }
 
     override fun findAllByCliente(clienteId: Long): List<Carrinho> =
