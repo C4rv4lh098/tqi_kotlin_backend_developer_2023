@@ -58,7 +58,7 @@ class CategoriaServiceTest {
     }
 
     @Test
-    fun `not find categoria by invalid id and throw BussinessException`(){
+    fun `not find categoria by invalid id and throw BusinessException`(){
         //given
         val fakeId: Long = Random().nextLong()
         every { categoriaRepository.findById(fakeId) } returns Optional.empty()
