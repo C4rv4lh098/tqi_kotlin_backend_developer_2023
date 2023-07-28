@@ -2,6 +2,7 @@ package com.desafio.jumarket
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
+import java.util.Random
 
 @SpringBootApplication
 class JumarketApplication

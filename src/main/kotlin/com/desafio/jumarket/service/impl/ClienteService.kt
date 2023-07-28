@@ -15,7 +15,7 @@ data class ClienteService(
 
     override fun findById(id: Long): Cliente =
             this.clienteRepository.findById(id).orElseThrow {
-                throw BusinessException("Id %id not found")
+                throw BusinessException("Id $id not found")
             }
 
     override fun delete(id: Long) {

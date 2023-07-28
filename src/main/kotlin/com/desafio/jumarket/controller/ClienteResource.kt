@@ -22,8 +22,8 @@ class ClienteResource(
         private val clienteService: ClienteService
 ) {
     @PostMapping
-    fun saveCliente(@RequestBody @Valid carrinhoDto: ClienteDto): ResponseEntity<String>{
-        val savedCliente = this.clienteService.save(carrinhoDto.toEntity())
+    fun saveCliente(@RequestBody @Valid clienteDto: ClienteDto): ResponseEntity<String>{
+        val savedCliente = this.clienteService.save(clienteDto.toEntity())
         return ResponseEntity.status(HttpStatus.CREATED).body("Cliente ${savedCliente.nome} saved!")
     }
 

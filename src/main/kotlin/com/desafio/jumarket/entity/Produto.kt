@@ -20,6 +20,10 @@ data class Produto(
         var preco: Double,
 
         @ManyToOne
+        var categoria: Categoria,
+
+        @ManyToMany(fetch = FetchType.LAZY, cascade = [CascadeType.REMOVE],
+                mappedBy = "produto")
         @JsonIgnore
-        var categoria: Categoria
+        var compra: List<Compra> = mutableListOf()
 )
