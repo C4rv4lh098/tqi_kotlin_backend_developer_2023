@@ -23,6 +23,9 @@ class ProdutoService(
                 throw BusinessException("Id $id not found")
             }
 
+    override fun findAll(): List<Produto> =
+            this.produtoRepository.findAll()
+
     override fun findAllByCategoria(categoriaId: Long): List<Produto> =
             this.produtoRepository.findAllByCategoriaId(categoriaId)
 

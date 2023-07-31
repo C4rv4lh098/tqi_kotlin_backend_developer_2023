@@ -8,5 +8,8 @@ interface IProdutoService {
     fun findById(id: Long): Produto
 
     fun findAllByCategoria(categoriaId: Long): List<Produto>
+
+    fun findAll(): List<Produto>
+
     fun delete(id: Long)
 }

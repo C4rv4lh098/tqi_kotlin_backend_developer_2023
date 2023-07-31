@@ -18,6 +18,9 @@ class CategoriaService(
                 throw BusinessException("Id $id not found")
             }
 
+    override fun findAll(): List<Categoria> =
+            this.categoriaRepository.findAll()
+
     override fun delete(id: Long) {
         val categoria: Categoria = this.findById(id)
         this.categoriaRepository.delete(categoria)

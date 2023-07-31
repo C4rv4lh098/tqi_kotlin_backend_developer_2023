@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
+import java.util.stream.Collectors
 
 @RestController
 @RequestMapping("/api/categoria")
@@ -31,6 +32,14 @@ class CategoriaResource(
     fun findById(@PathVariable id: Long): ResponseEntity<CategoriaView>{
         val categoria: Categoria = this.categoriaService.findById(id)
         return ResponseEntity.status(HttpStatus.OK).body(CategoriaView(categoria))
+    }
+
+    @GetMapping
+    fun findAllCategorias(): ResponseEntity<List<CategoriaView>>{
+        val categoriaList: List<CategoriaView> = this.categoriaService.findAll().stream()
+                .map{categoria: Categoria -> CategoriaView(categoria)}
+                .collect(Collectors.toList())
+        return ResponseEntity.status(HttpStatus.OK).body(categoriaList)
     }
 
     @DeleteMapping("/{id}")

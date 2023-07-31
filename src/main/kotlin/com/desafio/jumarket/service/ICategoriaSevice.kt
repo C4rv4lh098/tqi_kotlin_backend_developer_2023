@@ -8,5 +8,7 @@ interface ICategoriaSevice {
 
     fun findById(id: Long): Categoria
 
+    fun findAll(): List<Categoria>
+
     fun delete(id: Long)
 }

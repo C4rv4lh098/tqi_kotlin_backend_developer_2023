@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
 
@@ -31,6 +32,12 @@ class ClienteResource(
     fun findById(@PathVariable id: Long): ResponseEntity<ClienteView>{
         val cliente: Cliente = this.clienteService.findById(id)
         return ResponseEntity.status(HttpStatus.OK).body(ClienteView(cliente))
+    }
+
+    @GetMapping
+    fun findByNome(@RequestParam(value = "clienteNome") clienteNome: String): ResponseEntity<Cliente>{
+        val cliente: Cliente = this.clienteService.findByNome(clienteNome)
+        return ResponseEntity.status(HttpStatus.OK).body(cliente)
     }
 
     @DeleteMapping("/{id}")

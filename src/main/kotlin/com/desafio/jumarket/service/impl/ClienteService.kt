@@ -18,6 +18,9 @@ data class ClienteService(
                 throw BusinessException("Id $id not found")
             }
 
+    override fun findByNome(nome: String): Cliente =
+            this.clienteRepository.findClienteByNome(nome)
+
     override fun delete(id: Long) {
         val cliente: Cliente = this.findById(id)
         this.clienteRepository.delete(cliente)

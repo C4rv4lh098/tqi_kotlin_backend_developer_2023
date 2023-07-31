@@ -14,11 +14,12 @@ class CompraDto(
         @field:NotNull(message = "Invalid Input")
         val pagamento: Pagamento,
 
-        @field:NotNull(message = "Invalid Input")
-        val valorTotal: Double,
-
         @field:NotEmpty(message = "Invalid Input")
-        val produto: List<Produto>
+        val produto: List<Produto>,
+
+        @field:NotNull(message = "Invalid Input")
+        var valorTotal: Double
+
 ) {
     fun toEntity(): Compra = Compra(
             cliente = Cliente(id = this.clienteId),
