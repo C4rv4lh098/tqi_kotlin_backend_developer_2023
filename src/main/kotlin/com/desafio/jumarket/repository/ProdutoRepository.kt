@@ -9,4 +9,7 @@ import org.springframework.stereotype.Repository
 interface ProdutoRepository: JpaRepository<Produto ,Long> {
     @Query(value = "SELECT * FROM PRODUTO WHERE CATEGORIA_ID = ?1", nativeQuery = true)
     fun findAllByCategoriaId(categoriaId: Long): List<Produto>
+
+    @Query(value = "SELECT * FROM PRODUTO", nativeQuery = true)
+    fun findAllProduto(): List<Produto>
 }

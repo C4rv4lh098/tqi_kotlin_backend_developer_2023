@@ -7,5 +7,7 @@ interface IClienteService {
 
     fun findById(id: Long): Cliente
 
+    fun findByNome(nome: String): Cliente
+
     fun delete(id:Long)
 }

@@ -46,6 +46,14 @@ class ProdutoResource(
         return ResponseEntity.status(HttpStatus.OK).body(produtoViewList)
     }
 
+    @GetMapping("/produtos")
+    fun findAllProdutos(): ResponseEntity<List<ProdutoView>>{
+        val produtoList: List<ProdutoView> = this.produtoService.findAll().stream()
+                .map {produto: Produto -> ProdutoView(produto)}
+                .collect(Collectors.toList())
+        return ResponseEntity.status(HttpStatus.OK).body(produtoList)
+    }
+
     @PatchMapping
     fun updateProduto(@RequestParam(value = "produtoId") id: Long,
                       @RequestBody @Valid produtoUpdateDto: ProdutoUpdateDto): ResponseEntity<ProdutoView>{

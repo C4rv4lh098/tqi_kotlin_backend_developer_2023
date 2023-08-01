@@ -34,7 +34,7 @@ class CompraResource(
         return ResponseEntity.status(HttpStatus.OK).body(CompraView(compra))
     }
 
-    @DeleteMapping("/[id}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun deleteCompra(@PathVariable id: Long) = this.compraService.delete(id)
 }
