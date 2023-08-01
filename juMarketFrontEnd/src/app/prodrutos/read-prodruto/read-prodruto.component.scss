@@ -1,0 +1,50 @@
+$backgroundColor: #e4e4e4;
+$textColor: black;
+
+.controle{
+  margin-left: 85%;
+  padding: 15px;
+
+  a{
+    color: $textColor;
+  }
+
+  .pesquisa{
+    input{
+      text-align: center;
+      border-bottom: 2px solid black;
+      border-right: 2px solid black;
+      border-radius: 5px;
+
+    }
+    i{
+      margin: 10px;
+    }
+  }
+}
+
+
+.content{
+  display: flex;
+  width: 100%;
+  height: fit-content;
+
+  padding: 15px;
+
+  border-radius: 5px;
+  background-color: $backgroundColor;
+
+  table{
+    text-align: center;
+    font-family: sans-serif;
+  }
+
+  button{
+    font-size: small;
+    width: 100px;
+    height: 50px;
+  }
+}
+
+
+

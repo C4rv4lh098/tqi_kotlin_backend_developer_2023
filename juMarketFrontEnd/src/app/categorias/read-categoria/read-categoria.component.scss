@@ -1,0 +1,13 @@
+$backgroundColor: #e4e4e4;
+
+.container-fluid{
+  width: fit-content;
+  height: fit-content;
+
+  margin-top: 20px;
+  margin-right: 53.5%;
+  padding: 10px;
+  border-radius: 15px;
+
+  background-color: $backgroundColor;
+}

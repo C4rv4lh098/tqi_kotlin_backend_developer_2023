@@ -1,0 +1,29 @@
+$textColor: rgba(0, 0, 0, 0.842);
+$bootstrapInfoColor: 	#0DCAF0;
+$backgroundColor: #e4e4e4;
+
+#carrinho{
+  background-color: $backgroundColor;
+  color: $textColor;
+  &:hover{
+    transition: 0.1s ease-in;
+    background-color: $bootstrapInfoColor;
+  }
+  #carrinhoIcone{
+    color: $bootstrapInfoColor;
+  }
+
+  &:hover{
+    transition: 0.1s ease-in;
+    color: white;
+    #carrinhoIcone{
+      color: white;
+      transition: 0.1s ease-in;
+    }
+  }
+}
+
+.car{
+ margin-bottom: -5.4%;
+ margin-left: 76%;
+}

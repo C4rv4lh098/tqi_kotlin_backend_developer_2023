@@ -1,0 +1,48 @@
+$backgroundColor: #63259c;
+$textColor: black;
+$iconColor: #d4d4d4;
+
+*{
+  box-sizing: border-box;
+
+  width: 1880px;
+  height: 10px;
+
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.headerCompra{
+
+  width: 100%;
+  height: 15%;
+
+  border-bottom-left-radius: 15%;
+  border-bottom-right-radius: 15%;
+
+  background-color: $backgroundColor;
+}
+
+.title{
+  h1{
+    margin-left: 15%;
+    color: $iconColor;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+  i{
+    color: $iconColor;
+  }
+
+  #cestaCompra{
+    margin-top: -15px;
+    margin-left: -70%;
+  }
+}
+

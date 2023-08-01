@@ -1,0 +1,84 @@
+<app-header-estoque></app-header-estoque>
+<div class="controle">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a title="Cadastro de Novos Produtos" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Cadastro +</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="/categoria/cadastro">Categoria</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="/produto/cadastro">Produto</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Categorias</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Bebidas</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Comidas</a></li>
+      </ul>
+    </li>
+  </ul>
+  <div class="pesquisa">
+    <input type="Pesquisa" autofocus placeholder="PESQUISA">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </div>
+</div>
+  <div class="content">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col"> # </th>
+          <th scope="col"> ITEM </th>
+          <th scope="col"> UNIDADE DE MEDIDA </th>
+          <th scope="col"> PREÇO (R$) </th>
+          <th scope="col"> CATEGORIA </th>
+          <th></th>
+          <th scope="col"> AÇÕES </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Coca Cola 2L</td>
+          <td>Litro</td>
+          <td>6.0</td>
+          <td>Bebidas</td>
+          <td><button id="editar" title="Editar Produto" class="btn btn-outline-info" type="button">Editar <i id="editarIcone" class="fa-solid fa-file-pen fa-lg"></i></button></td>
+          <td></td>
+          <td><button id="deletar" title="Deletar Produto" class="btn btn-outline-danger" type="button">Deletar <i id="deletarIcone" class="fa-solid fa-trash fa-lg"></i></button></td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Coca Cola 500ml</td>
+          <td>Litro</td>
+          <td>3.80</td>
+          <td>Bebidas</td>
+          <td><button id="editar" title="Editar Produto" class="btn btn-outline-info" type="button">Editar <i id="editarIcone" class="fa-solid fa-file-pen fa-lg"></i></button></td>
+          <td></td>
+          <td><button id="deletar" title="Deletar Produto" class="btn btn-outline-danger" type="button">Deletar <i id="deletarIcone" class="fa-solid fa-trash fa-lg"></i></button></td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Bolacha Cream Cracker 500mg</td>
+          <td>Grama</td>
+          <td>7.90</td>
+          <td>Comidas</td>
+          <td><button id="editar" title="Editar Produto" class="btn btn-outline-info" type="button">Editar <i id="editarIcone" class="fa-solid fa-file-pen fa-lg"></i></button></td>
+          <td></td>
+          <td><button id="deletar" title="Deletar Produto" class="btn btn-outline-danger" type="button">Deletar <i id="deletarIcone" class="fa-solid fa-trash fa-lg"></i></button></td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>Batata Palha 500gm</td>
+          <td>Grama</td>
+          <td>7.50</td>
+          <td>Comidas</td>
+          <td><button id="editar" title="Editar Produto" class="btn btn-outline-info" type="button">Editar <i id="editarIcone" class="fa-solid fa-file-pen fa-lg"></i></button></td>
+          <td></td>
+          <td><button id="deletar" title="Deletar Produto" class="btn btn-outline-danger" type="button">Deletar <i id="deletarIcone" class="fa-solid fa-trash fa-lg"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+
