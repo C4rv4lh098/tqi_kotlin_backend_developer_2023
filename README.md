@@ -71,6 +71,7 @@
         {
             "clienteId": {id do cliente},
             "pagamento": {numero referente ao tipo de pagamento},
+            "valorTotal": {valor total, número do tipo double},
             "produto":[
                 {
                     "id": {id do produto},
